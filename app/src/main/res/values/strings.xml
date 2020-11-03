@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Notes</string>
+    <string name="make_backup">製作備份檔</string>
+    <string name="update_data">以備份更新資料</string>
+    <string name="save_local">存於本機中</string>
+    <string name="save_drive">存於雲端</string>
+    <string name="over_file">覆蓋已存在文件</string>
+    <string name="keep_file">保留已存在文件</string>
 </resources>

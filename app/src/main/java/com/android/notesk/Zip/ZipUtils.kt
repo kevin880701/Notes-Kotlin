@@ -1,5 +1,6 @@
 package com.android.notesk.Zip
 
+import android.util.Log
 import com.android.notesk.Model.Model.Companion.BACKUP_NAME
 import com.android.notesk.Model.Model.Companion.DATABASES_PATH
 import com.android.notesk.Model.Model.Companion.PACKAGE_FILES_PATH
@@ -8,49 +9,34 @@ import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.IOException
 import java.util.zip.ZipOutputStream
-import java.util.zip.ZipEntry;
+import java.util.zip.ZipEntry
 
 class ZipUtils() {
     var filesList: ArrayList<String>  = ArrayList()
     var databasesList: ArrayList<String>  = ArrayList()
-    private val OUTPUT_ZIP_FILE = BACKUP_NAME
-    private val SOURCE_FOLDER = PACKAGE_FILES_PATH // SourceFolder path
-    val source = File(SOURCE_FOLDER).name
+    val source = File(PACKAGE_FILES_PATH).name
     val databasesSource = File(DATABASES_PATH).name
     val buffer = ByteArray(1024)
-    var fos = FileOutputStream(File(SOURCE_FOLDER).parent + File.separator + OUTPUT_ZIP_FILE)
+    var fos = FileOutputStream(File(PACKAGE_FILES_PATH).parent + File.separator + BACKUP_NAME)
     var zos = ZipOutputStream(fos)
 
     init {
-        zipIt(File(SOURCE_FOLDER).parent + File.separator + OUTPUT_ZIP_FILE)
+        zipIt(File(PACKAGE_FILES_PATH).parent + File.separator + BACKUP_NAME)
     }
 
     fun zipIt(zipFile: String) {
         try {
-            generateFilesList(File(SOURCE_FOLDER + File.separator))
-            generateDatabaseList(File(DATABASES_PATH + File.separator))
+            generateFilesList(File(PACKAGE_FILES_PATH + File.separator))
+//            generateDatabaseList(File(DATABASES_PATH + File.separator))
             println("Output to Zip : $zipFile")
             var `in`: FileInputStream? = null
             for (file in filesList!!) {
                 println("File Added : $file")
-                val ze = ZipEntry(source + File.separator + file)
+//                val ze = ZipEntry(source + File.separator + file)  //新增上層資料夾
+                val ze = ZipEntry(file)
                 zos.putNextEntry(ze)
                 try {
-                    `in` = FileInputStream(SOURCE_FOLDER + File.separator + file)
-                    var len = 0
-                    while (`in`.read(buffer).also({ len = it }) > 0) {
-                        zos.write(buffer, 0, len)
-                    }
-                } finally {
-//                    (`in` as FileInputStream).close()
-                }
-            }
-            for (file in databasesList!!) {
-                println("File Added : $file")
-                val ze = ZipEntry(databasesSource + File.separator + file)
-                zos.putNextEntry(ze)
-                try {
-                    `in` = FileInputStream(DATABASES_PATH + File.separator + file)
+                    `in` = FileInputStream(PACKAGE_FILES_PATH + File.separator + file)
                     var len = 0
                     while (`in`.read(buffer).also({ len = it }) > 0) {
                         zos.write(buffer, 0, len)
@@ -59,6 +45,21 @@ class ZipUtils() {
                     (`in` as FileInputStream).close()
                 }
             }
+            // 跑SQL資料夾
+//            for (file in databasesList!!) {
+//                println("File Added : $file")
+//                val ze = ZipEntry(databasesSource + File.separator + file)
+//                zos.putNextEntry(ze)
+//                try {
+//                    `in` = FileInputStream(DATABASES_PATH + File.separator + file)
+//                    var len = 0
+//                    while (`in`.read(buffer).also({ len = it }) > 0) {
+//                        zos.write(buffer, 0, len)
+//                    }
+//                } finally {
+//                    (`in` as FileInputStream).close()
+//                }
+//            }
             zos.closeEntry()
         } catch (ex: IOException) {
             ex.printStackTrace()
@@ -96,7 +97,7 @@ class ZipUtils() {
     }
 
     private fun generateZipEntry(file: String): String? {
-        return file.substring(SOURCE_FOLDER.length + 1, file.length)
+        return file.substring(PACKAGE_FILES_PATH.length + 1, file.length)
     }
 
     private fun databasesGenerateZipEntry(file: String): String? {

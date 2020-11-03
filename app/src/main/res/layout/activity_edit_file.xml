@@ -20,44 +20,50 @@
             android:background="#00000000"
             android:scaleType="fitCenter"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/back" />
+            android:paddingLeft="5dp"
+            app:srcCompat="@drawable/button_back" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="50dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="1">
-    </LinearLayout>
-
+        <TextView
+            android:id="@+id/fileTitle"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:textSize="20dp"
+            android:textColor="@color/gray"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:gravity="center_vertical|left" />
 
     <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="50dp"
-                android:layout_height="fill_parent" >
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent" >
 
             <ImageView
                 android:id="@+id/del"
                 android:layout_width="50dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/del" />
+                app:srcCompat="@drawable/button_delete" />
         </LinearLayout>
 
         <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="fill_parent" >
 
             <ImageView
                 android:id="@+id/ok"
                 android:layout_width="50dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:background="#00000000"
                 android:scaleType="fitCenter"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/save" />
+                app:srcCompat="@drawable/button_save" />
         </LinearLayout>
     </LinearLayout>
 
@@ -70,7 +76,7 @@
 
         <ImageView
                 android:id="@+id/addPic"
-                android:src="@drawable/none"
+                android:src="@drawable/button_non_image"
                 android:layout_height="60dp"
                 android:layout_width="60dp" ></ImageView>
 
@@ -83,15 +89,42 @@
 
     </LinearLayout>
 
-    <EditText
-            android:id="@+id/editContent"
-            android:layout_width="match_parent"
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <com.android.notesk.ScrollView.ObservableScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_weight="15"
             android:layout_height="match_parent"
-            android:gravity="top"
-            android:scrollbars="vertical"
-            android:singleLine="false"
-            android:textSize="20dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="5dp" />
+            android:fillViewport="true"
+            android:scrollbars="none" >
+
+            <EditText
+                android:id="@+id/editContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top"
+                android:scrollbars="vertical"
+                android:background="@null"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:textSize="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="5dp" />
+
+        </com.android.notesk.ScrollView.ObservableScrollView>
+
+        <com.android.notesk.SeekBar.VerticalSeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
 </LinearLayout>
