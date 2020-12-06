@@ -68,8 +68,5 @@ dependencies {
     implementation 'com.google.android.gms:play-services-drive:15.0.1'
     //Stetho
     implementation 'com.facebook.stetho:stetho:1.5.1'
-
-
-
 //    implementation 'androidx.core:core-ktx:{latestVersion}'
 }

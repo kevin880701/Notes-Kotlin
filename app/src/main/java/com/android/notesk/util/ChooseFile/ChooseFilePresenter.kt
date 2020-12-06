@@ -77,6 +77,7 @@ class ChooseFilePresenter(context: ChooseFileActivity) {
             intent.putExtras(bundle)
         }
         mContext.startActivity(intent)
+        mContext.finish()
     }
 
     fun createNavigationView() {
