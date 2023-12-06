@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/widgetTitleBar"
+            layout="@layout/widget_title_bar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/md_theme_light_primaryContainer"
+            app:layout_constraintTop_toBottomOf="@+id/widgetTitleBar">
+
+            <ImageView
+                android:id="@+id/imageViewPicture"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/picture"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTitle"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:background="@color/transparent"
+                android:hint="@string/enter_title"
+                android:text=""
+                android:textAppearance="@style/TextAppearance.Astec.Body2"
+                android:textColor="@color/seed"
+                android:textColorHint="@color/md_theme_light_onPrimaryContainer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/imageViewPicture"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/seekBar"
+            app:layout_constraintTop_toBottomOf="@+id/constraintImage">
+
+            <com.lhr.notes_kotlin.util.scrollView.ObservableScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/editContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/seed" />
+
+            </com.lhr.notes_kotlin.util.scrollView.ObservableScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.lhr.notes_kotlin.util.VerticalSeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:max="100"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintImage" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

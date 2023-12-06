@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/popLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_r15_f1f1f1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/textDeleteImage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/design_default_color_error"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.Astec.HeadLine2"
+            android:text="@string/delete_image" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_737373"/>
+
+        <TextView
+            android:id="@+id/textChangeImage"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.Astec.HeadLine5"
+            android:textColor="@color/seed"
+            android:text="@string/choose_image"
+            android:textSize="18sp" />
+    </LinearLayout>
+</layout>

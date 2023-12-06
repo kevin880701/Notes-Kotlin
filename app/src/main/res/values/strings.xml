@@ -1,9 +1,31 @@
 <resources>
-    <string name="app_name">Notes</string>
+    <string name="app_name">Notes-Kotlin</string>
+
+    <string name="enter_password">輸入密碼</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+
     <string name="make_backup">製作備份檔</string>
     <string name="update_data">以備份更新資料</string>
-    <string name="save_local">存於本機中</string>
-    <string name="save_drive">存於雲端</string>
-    <string name="over_file">覆蓋已存在文件</string>
-    <string name="keep_file">保留已存在文件</string>
+
+    <string name="edit_content">編輯內容</string>
+    <string name="add_content">新增內容</string>
+
+    <string name="enter_title">輸入標題</string>
+    <string name="enter_content">輸入內容</string>
+
+    <string name="delete_image">刪除圖片</string>
+    <string name="choose_image">選擇圖片</string>
+
+    <string name="is_delete_file">確定刪除檔案?</string>
+    <string name="confirm">確定</string>
+    <string name="cancel">取消</string>
 </resources>

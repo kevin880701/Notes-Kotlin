@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "24947989031",
+    "project_id": "notes-kotlin-e973a",
+    "storage_bucket": "notes-kotlin-e973a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24947989031:android:5e1763d2c8f75a8e258c02",
+        "android_client_info": {
+          "package_name": "com.lhr.notes_kotlin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8mz_8bNcv31Qq1g6RNmuR_WpyShwZvcw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

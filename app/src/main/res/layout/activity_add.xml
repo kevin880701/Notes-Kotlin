@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constrainTitleBar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/underline"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            app:layout_constraintHeight_percent="0.08"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageViewBack"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/left_arrow"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/seed" />
+
+            <TextView
+                android:id="@+id/textViewTitleBar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical|left"
+                android:textColor="@color/seed"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/imageViewBack"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewSave"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp"
+                android:src="@drawable/save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/seed" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imageViewPicture"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/picture"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constrainTitleBar" />
+
+        <EditText
+            android:id="@+id/editTitle"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:hint="@string/enter_title"
+            android:text=""
+            app:layout_constraintLeft_toRightOf="@+id/imageViewPicture"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constrainTitleBar" />
+
+
+        <EditText
+            android:id="@+id/editContent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="5dp"
+            android:background="@null"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:gravity="top"
+            android:scrollbars="vertical"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/imageViewPicture"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewPicture" />
+
+
+        <!--    <com.android.notesk.ScrollView.ObservableScrollView-->
+        <!--            android:id="@+id/scrollView"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_weight="15"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:fillViewport="true"-->
+        <!--            android:scrollbars="none" >-->
+
+        <!--        <EditText-->
+        <!--                android:id="@+id/editContent"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:gravity="top"-->
+        <!--                android:scrollbars="vertical"-->
+        <!--                android:background="@null"-->
+        <!--                android:focusable="true"-->
+        <!--                android:focusableInTouchMode="true"-->
+        <!--                android:textSize="20dp"-->
+        <!--                android:layout_marginLeft="8dp"-->
+        <!--                android:layout_marginRight="5dp" />-->
+
+        <!--    </com.android.notesk.ScrollView.ObservableScrollView>-->
+
+        <!--    <com.android.notesk.SeekBar.VerticalSeekBar-->
+        <!--            android:id="@+id/seekBar"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_weight="1" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

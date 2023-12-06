@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/textViewEnterPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:gravity="center"
+            android:text="@string/enter_password"
+            android:textSize="25dp"
+            android:textColor="@color/seed"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintPasswordCir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEnterPassword">
+
+            <ImageView
+                android:id="@+id/imageViewPasswordCir1"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewPasswordCir2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/imageViewPasswordCir1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewPasswordCir3"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/imageViewPasswordCir2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewPasswordCir4"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@id/imageViewPasswordCir3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintPasswordKeyboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintPasswordCir">
+
+            <TextView
+                android:id="@+id/textViewKeyboard1"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                android:textColor="@color/gray_737373"
+                android:textAppearance="@style/TextAppearance.Astec.HeadLine2"
+                android:text="@string/one"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewKeyboard2"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                android:textColor="@color/gray_737373"
+                android:textAppearance="@style/TextAppearance.Astec.HeadLine2"
+                android:text="@string/two"
+                app:layout_constraintLeft_toRightOf="@+id/textViewKeyboard1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewKeyboard3"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                android:textColor="@color/gray_737373"
+                android:textAppearance="@style/TextAppearance.Astec.HeadLine2"
+                android:text="@string/three"
+                app:layout_constraintLeft_toRightOf="@+id/textViewKeyboard2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewKeyboard4"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                android:textColor="@color/gray_737373"
+                android:textAppearance="@style/TextAppearance.Astec.HeadLine2"
+                android:text="@string/four"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewKeyboard1" />
+
+            <TextView
+                android:id="@+id/textViewKeyboard5"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                android:textColor="@color/gray_737373"
+                android:textAppearance="@style/TextAppearance.Astec.HeadLine2"
+                android:text="@string/five"
+                app:layout_constraintLeft_toRightOf="@+id/textViewKeyboard4"
+                app:layout_constraintTop_toBottomOf="@+id/textViewKeyboard1" />
+
+            <TextView
+                android:id="@+id/textViewKeyboard6"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                android:textColor="@color/gray_737373"
+                android:textAppearance="@style/TextAppearance.Astec.HeadLine2"
+                android:text="@string/six"
+                app:layout_constraintLeft_toRightOf="@+id/textViewKeyboard5"
+                app:layout_constraintTop_toBottomOf="@+id/textViewKeyboard1" />
+
+            <TextView
+                android:id="@+id/textViewKeyboard7"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                android:textColor="@color/gray_737373"
+                android:textAppearance="@style/TextAppearance.Astec.HeadLine2"
+                android:text="@string/seven"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewKeyboard4" />
+
+            <TextView
+                android:id="@+id/textViewKeyboard8"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                android:textColor="@color/gray_737373"
+                android:textAppearance="@style/TextAppearance.Astec.HeadLine2"
+                android:text="@string/eight"
+                app:layout_constraintLeft_toRightOf="@+id/textViewKeyboard7"
+                app:layout_constraintTop_toBottomOf="@+id/textViewKeyboard4" />
+
+            <TextView
+                android:id="@+id/textViewKeyboard9"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                android:textColor="@color/gray_737373"
+                android:textAppearance="@style/TextAppearance.Astec.HeadLine2"
+                android:text="@string/nine"
+                app:layout_constraintLeft_toRightOf="@+id/textViewKeyboard8"
+                app:layout_constraintTop_toBottomOf="@+id/textViewKeyboard4" />
+
+            <TextView
+                android:id="@+id/textViewKeyboard0"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/password_keyboard_cir"
+                android:gravity="center"
+                android:textColor="@color/gray_737373"
+                android:textAppearance="@style/TextAppearance.Astec.HeadLine2"
+                android:text="@string/zero"
+                app:layout_constraintLeft_toRightOf="@+id/textViewKeyboard7"
+                app:layout_constraintTop_toBottomOf="@+id/textViewKeyboard8" />
+
+            <TextView
+                android:id="@+id/textViewReal"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="16dp"
+                android:gravity="center"
+                app:layout_constraintLeft_toRightOf="@+id/textViewKeyboard0"
+                app:layout_constraintTop_toBottomOf="@+id/textViewKeyboard8" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
